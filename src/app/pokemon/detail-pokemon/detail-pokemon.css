@@ -1,0 +1,30 @@
+
+.card {
+    max-width: 1200px;
+    margin: auto;
+}
+
+a:hover {
+    cursor: pointer;
+}
+.pokemon-not-found{
+    padding: 3rem;
+    margin-top: 3rem;
+}
+.pokemon-not-found h3 {
+    font-size: 40px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.pokemon-not-found a {
+    font-size: 18px;
+}
+.pokemon-not-found .block-img {
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+.pokemon-not-found .block-img img {
+    width: 100%;
+}

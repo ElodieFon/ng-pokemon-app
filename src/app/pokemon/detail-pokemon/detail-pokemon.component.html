@@ -1,0 +1,56 @@
+<div class="col s12 m8 offset-m2" *ngIf="pokemon">
+    <h2 class="header center">{{pokemon.name}}</h2>
+    <div class="card horizontal ">
+        <div class="card-image">
+            <img [src]="pokemon.picture" [alt]="pokemon.name">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <table class="bordered striped">
+                    <tbody>
+                        <tr>
+                            <td>nom</td>
+                            <td>{{pokemon.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Point de vie</td>
+                            <td>{{pokemon.hp}}</td>
+                        </tr>
+                        <tr>
+                            <td>Dégats</td>
+                            <td>{{pokemon.cp}}</td>
+                        </tr>
+                        <tr>
+                            <td>types</td>
+                            <td>
+                                <span *ngFor="let type of pokemon.types" class="{{type | pokemonTypeColor}}"> {{ type
+                                    }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date de création</td>
+                            <td>{{ pokemon.created | date: 'dd/MM/yy' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-action">
+                <a (click)="goToPokemonList()">Retour</a>
+                <a (click)="goToPokemonEdit(pokemon)">Editer</a>
+                <a (click)="deletePokemon(pokemon)" class="">Suprimer</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!pokemon" class="pokemon-not-found ">
+    <app-loader></app-loader>
+    <h3 class="center">oups! le pokémon demandé c'est échappé ou n'a pas était trouvé !</h3>
+  
+    <div class="block-img">
+        <img src="https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png" alt="pokeball">
+    </div>
+    <p class="center">
+        <a (click)="goToPokemonList()" class="btn">Retourner sur la liste</a>
+    </p>
+</div>

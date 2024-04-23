@@ -1,0 +1,11 @@
+<div class="" *ngIf="pokemon">
+    <h2 class="center">Editer {{pokemon.name}}</h2>
+    <div class="center block-img">
+        <img [src]="pokemon.picture" [alt]="pokemon.name">
+    </div>
+    <app-pokemon-form [pokemon]="pokemon"></app-pokemon-form>
+</div>
+<div *ngIf="!pokemon">
+    <h2 class="center">Aucun pokemon à éditer</h2>
+    <a routerLink="/pokemons" class="btn center">retour a la liste</a>
+</div>
